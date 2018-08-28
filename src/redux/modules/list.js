@@ -1,5 +1,3 @@
-import {arrayMove} from 'react-sortable-hoc';
-
 const initialState = {
   list: [
     {id: Math.random(), imgUrl: "https://upload.wikimedia.org/wikipedia/commons/d/de/Windows_live_square.JPG"},
@@ -25,7 +23,6 @@ export default (state = initialState , action) => {
   case 'REORDER_LIST':
    return {
     ...state,
-    list: arrayMove(state.list, action.payload.oldIndex, action.payload.newIndex)
    }
   default:
    return state
