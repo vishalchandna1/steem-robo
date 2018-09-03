@@ -8,29 +8,22 @@ import withStyles from '../../../redux/helpers/withStyles';
 const styles = props => {
   console.log(props)
   return {
-    container: {
-      width: '80%',
-      marginTop: '15%',
-      marginLeft: '10%',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '40px 0 40px 0'
-    },
-    sendForReviewTextField: {
+    sliderContainer: {
       width: '90%',
-    },
-    rightIcon: {
-      marginLeft: props.theme.spacing.unit,
+      marginTop: '15%',
+      marginLeft: '5%',
     },
   }
 }
 
 class SteemPowerSlider extends Component {
   render() {
-    const { classes } = this.props;
+    const { props } = this;
+    const { classes, ...other } = props;
     return (
-      <Slider />
+      <div className={props.classes.sliderContainer}>
+        <Slider {...other} formatLabel={value => `${value}%`}/>
+      </div>
     )
   }
 }

@@ -5,7 +5,7 @@ const withStylesProps = styles =>
   Component =>
     props => {
       const PropsAttachedComp = withStyles(theme => styles({...props, theme}))(Component);
-      return <PropsAttachedComp/>;
+      return <PropsAttachedComp {...props}/>;
     };
 
 export default withStylesProps;
