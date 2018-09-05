@@ -7,10 +7,7 @@ class Home extends Component {
     const {loginUrl} = this.props
     return (
       <div>
-        <HomeContent />
-        <div className="login-container">
-          <SteemConnectLogin url={loginUrl} />
-        </div>
+        <HomeContent loginUrl={loginUrl}/>
       </div>
     )
   }

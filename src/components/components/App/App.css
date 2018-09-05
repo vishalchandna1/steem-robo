@@ -55,6 +55,6 @@ ul, li {
   margin-left: 8px;
   margin-top: 0;
 }
-a:hover, a span:hover {
+a:hover, a:hover span{
   color: white;
 }

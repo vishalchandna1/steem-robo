@@ -40,10 +40,10 @@ class NavBar extends Component {
             <Typography variant="body1" className={classes.leftMargin}>{name ? name + ',' : ''}</Typography>
             <Typography variant="title" className={classes.leftMargin}> Welcome to Steemrobo</Typography>
             <div>
-              <Button href={"https://google.com"} size="medium" color="primary">
+              <Button href={"/how-it-works"} size="medium" color="primary">
                 How it works?
               </Button>
-              <Button href={"https://google.com"} size="medium" color="secondary">
+              <Button href={"/faqs"} size="medium" color="secondary">
                 FAQs
               </Button>
               {!isLoggedIn && <div>
