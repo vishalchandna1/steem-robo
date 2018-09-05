@@ -37,3 +37,24 @@ ul, li {
   padding-left: 20%;
   padding-right: 20%;
 }
+
+.slider-container div div span .input-range__label--value {
+  top: -3.2rem;
+  font-size: 1.6rem;
+  left: 10px;
+}
+
+.navbar-container aside > div {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  margin-top: 0;
+}
+
+.navbar-container aside div div {
+  margin-left: 8px;
+  margin-top: 0;
+}
+a:hover, a span:hover {
+  color: white;
+}

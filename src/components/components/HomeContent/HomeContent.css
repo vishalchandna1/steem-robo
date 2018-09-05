@@ -1,0 +1,76 @@
+.HomeContent {
+}
+
+.slide-item-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 46.25%;
+}
+
+.slide-item-wrapper img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slide-item-wrapper .text {
+  color: white;
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  right: 0;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 3rem;
+  width: 40%;
+  font-family: Roboto;
+  opacity: 0.9;
+  background-color: rgb(0,0,0, 0.2);
+  border-radius: 10px;
+}
+
+.slide-item-wrapper a {
+  color: inherit;
+}
+
+.right-image-left-content, .left-image-right-content {
+  margin-top: 96px;
+  display: flex;
+  align-items: center;
+}
+
+.right-image-left-content .left-content, .left-image-right-content .right-content{
+  flex:1;
+  margin-left: 24px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-image-left-content .left-content .heading, .left-image-right-content .right-content .heading{
+  font-size: 2rem;
+  font-family: roboto;
+}
+
+.right-image-left-content .left-content .text-content, .left-image-right-content .right-content .text-content{
+  text-align: left;
+  margin-top: 32px;
+  padding: 0 72px 0 72px;
+  font-family: roboto;
+  color: #616161;
+}
+
+.right-image-left-content .right-content, .left-image-right-content .left-content{
+  flex:1;
+  margin-right: 24px;
+  margin-left: 24px;
+}
+
+.right-image-left-content .right-content img, .left-image-right-content .left-content img{
+  width: 100%;
+  border-radius: 4px;
+}

@@ -3,3 +3,8 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.input-range__label--value {
+  top: -30px;
+  font-size: 24px;
+}

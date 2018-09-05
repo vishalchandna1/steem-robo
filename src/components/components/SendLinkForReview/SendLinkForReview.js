@@ -10,7 +10,7 @@ const styles = props => {
   return {
     container: {
       width: '80%',
-      marginTop: '15%',
+      marginTop: '5%',
       marginLeft: '10%',
       display: 'flex',
       flexDirection: 'column',

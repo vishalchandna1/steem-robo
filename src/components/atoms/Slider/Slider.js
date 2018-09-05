@@ -24,7 +24,6 @@ class NewSlider extends Component {
   }
   render() {
     const {step, handleChange, value, minValue, maxValue, formatLabel} = this.props;
-    console.log(this.state, this.props)
     return (
       <InputRange value={this.state.value} minValue={minValue} maxValue={maxValue} step={step} 
       onChange={value => this.setState({ value })} onChangeComplete={value => this.handleAfterChange(value)} formatLabel={formatLabel} />
