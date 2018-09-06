@@ -3,12 +3,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '../../atoms/Button/Button';
+import Link from '../../atoms/Link/Link';
 import withStyles from '../../../redux/helpers/withStyles';
 import SteemConnectLogin from '../../atoms/SteemConnectLogin/SteemConnectLogin'
 import Popover from '@material-ui/core/Popover';
 import Paper from '@material-ui/core/Paper';
 
 const styles = props => {
+  const { unit } = props.theme.spacing;
+  const { palette } = props.theme;
   return {
     navContainer: {
       padding: '12px 12px',
@@ -46,16 +49,30 @@ const styles = props => {
     avatarButton: {
       background: 'transparent',
       boxShadow: 'none',
-      borderRadius: 7 * props.theme.spacing.unit,
+      borderRadius: 7 * unit,
       border: '2px solid grey',
       padding:'10px 12px',
       minWidth: 0,
-      color: props.theme.palette.common.black,
+      color: palette.common.black,
       fontSize: '1.2rem',
     },
     linksContainer: {
       display: 'flex',
       alignItems: 'center',
+    },
+    faqLink: {
+      background: palette.secondary.main,
+      padding:'6px 20px',
+      borderRadius: unit/2,
+      color: palette.common.white,
+      marginLeft: unit,
+    },
+    howItWorksLink: {
+      background: palette.primary.main,
+      padding:'6px 20px',
+      borderRadius: unit/2,
+      color: palette.common.white,
+      marginLeft: unit,
     }
   }
 }
@@ -91,12 +108,12 @@ class NavBar extends Component {
             <Typography variant="body1" className={classes.leftMargin}>{name ? name + ',' : ''}</Typography>
             <Typography variant="title" className={classes.leftMargin}> Welcome to Steemrobo</Typography>
             <div className={classes.linksContainer}>
-              <Button href={"/faqs"} size="medium" color="secondary">
+              <Link to={"/faqs"} backgroundColor="#f50057" className={classes.faqLink}>
                 FAQs
-              </Button>
-              <Button href={"/how-it-works"} size="medium" color="primary">
+              </Link>
+              <Link to={"/how-it-works"} className={classes.howItWorksLink}>
                 How it works?
-              </Button>
+              </Link>
               {!isLoggedIn && <div>
                 <SteemConnectLogin url={loginUrl}/>
               </div>}
@@ -126,11 +143,11 @@ class NavBar extends Component {
                   }}
                 >
                   <Paper elevation={10} className={classes.userPopOverContainer}>
-                    <Button href="edit-upvotes" color="inherit" className={classes.editUpvotesButton}>
-                      <span>Edit Upvotes</span>
-                    </Button>
-                    <Button color="inherit" className={classes.logoutButton} onClick={logout}>
-                      <span><i className="fa fa-external-link mr-2 text-red icon-danger"></i>Logout</span>
+                    <Link to="edit-upvotes" backgroundColor="transparent" boxShadow="none" color="black">
+                      Edit Upvotes
+                    </Link>
+                    <Button color="default" className={classes.logoutButton} onClick={logout}>
+                      <i className="fa fa-external-link mr-2 text-red icon-danger"></i>Logout
                     </Button>
                   </Paper>
                 </Popover>
