@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = theme => {
+  console.log(theme)
   return {
     buttonProgress: {
       color: 'white',
@@ -15,18 +16,17 @@ const styles = theme => {
     },
     sendButtonContainer: {
       position: 'relative',
-      marginTop: 5 * theme.spacing.unit
     },
   }
 }
 
 class NewButton extends Component {
   render() {
-    const {color, variant, className, containerClassName, children, loading, classes, handleSubmit, href} = this.props;
-    console.log(this.props)
+    const {color, variant, className, children, handleSubmit, href} = this.props;
+    const { classes, loading, containerClassName, ...other } = this.props;
     return (
-      <div className={[classes.sendButtonContainer]}>
-        <Button variant={variant || 'contained'} color={color || 'primary'} className={className} onClick={handleSubmit || null} href={href ? href : null}>
+      <div className={classes.sendButtonContainer}>
+        <Button  variant={variant || 'contained'} color={color || 'primary'} className={className} onClick={handleSubmit || null} href={href ? href : null} {...other}>
           {!loading && children}
         </Button>
         {loading && <CircularProgress size={24} className={classes.buttonProgress} />}

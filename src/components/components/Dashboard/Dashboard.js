@@ -4,16 +4,13 @@ import SteemPowerSliderContainer from '../../containers/SteemPowerSliderContaine
 
 class Dashboard extends Component {
   componentDidMount() {
-    const { sc2, setAccountInfo, invalidAcessToken, setSliderLoading } = this.props;
-    setSliderLoading(true);
+    const { sc2, setAccountInfo, invalidAcessToken } = this.props;
     setTimeout(() => {
       sc2.me((err, res) => {
         if (err) {
           invalidAcessToken();
-          setSliderLoading(false);
         } else {
           setAccountInfo(res.account);
-          setSliderLoading(false);
         }
       })
     })
@@ -23,7 +20,6 @@ class Dashboard extends Component {
     return (
       <div>
         <SendLinkForReview  y='a' />
-        <SteemPowerSliderContainer value={voting_weight} maxValue={100} handleChange={setVotingWeight} sp={steem_power}/>
       </div>
     )
   }

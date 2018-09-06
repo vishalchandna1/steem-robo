@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import SteemConnectLogin from '../../atoms/SteemConnectLogin/SteemConnectLogin';
-import Swiper from 'react-id-swiper';
-import 'swiper/dist/css/swiper.css';
 import * as securityImage from '../../../assets/images/security.jpg';
-import * as openSource from '../../../assets/images/open_source.jpg';
+import * as openSource from '../../../assets/images/open_source.png';
 import * as robot from '../../../assets/images/robot.jpg';
 import * as mutualBenefits from '../../../assets/images/mutual_benefits.jpg';
 import './HomeContent.css';
@@ -12,51 +10,11 @@ import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import PublicIcon from '@material-ui/icons/Public';
 
-
 class HomeContent extends Component {
-  constructor(props) {
-    super(props)
-    this.goNext = this.goNext.bind(this)
-    this.goPrev = this.goPrev.bind(this)
-    this.swiper = null
-  }
-  goNext() {
-    if (this.swiper) this.swiper.slideNext()
-  }
-
-  goPrev() {
-    if (this.swiper) this.swiper.slidePrev()
-  }
-
   render() {
     const { loginUrl } = this.props;
-    const params = {
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
-    }
     return(
       <div className="HomeContent">
-        {/*<Swiper {...params} ref={node => {if(node) this.swiper = node.swiper} }>
-          <div className="slide-item-wrapper">
-            <img src={mutualBenefits}/>
-            <span className="text">Let's help each other</span>
-          </div>
-          <div className="slide-item-wrapper">
-            <img src={securityImage}/>
-            <span className="text">SteemConnect OAuth 2.0</span>
-          </div>
-          <div className="slide-item-wrapper">
-            <img src={openSource}/>
-            <span className="text"><Link to="/code">Open Source</Link></span>
-          </div>
-        </Swiper>*/}
         <div className="right-image-left-content">
           <div className="left-content">
             <span className="heading">
@@ -65,7 +23,7 @@ class HomeContent extends Component {
             <span className="text-content">
               Steemrobo is a automated system designed in a way to help out the people in need. All the users of the platform are mututally benefitted. Is it free? Yes, totally!
               All you have to do is contrubute to the upvotes. Don't forget to check out 
-              <div className="text-center">
+              <div className="text-center mt-5">
                 <Button href={"/how-it-works"} size="medium" color="primary">
                   How it works?
                 </Button>
@@ -73,16 +31,16 @@ class HomeContent extends Component {
             </span>
           </div>
           <div className="right-content">
-            <Paper elevation={5}>
-              <img src={mutualBenefits} />
+            <Paper elevation={7}>
+              <img src={mutualBenefits} alt="Help each other"/>
             </Paper>
           </div>
         </div>
 
         <div className="left-image-right-content">
           <div className="left-content">
-            <Paper elevation={5}>
-              <img src={securityImage} />
+            <Paper elevation={7}>
+              <img src={securityImage} alt="Steem Connect OAuth 2.0"/>
             </Paper>
           </div>
           <div className="right-content">
@@ -92,7 +50,7 @@ class HomeContent extends Component {
             <span className="text-content">
               SteemConnect OAuth 2.0 has become the standard for the 3rd-party apps. Steemrobo also uses it to authenticate the users with an access of mainly "vote".
               The platform is super secured as no Access Token is stored.
-              <div className="text-center">
+              <div className="text-center mt-5">
                 <Button href={"https://steemconnect.com/"} size="medium" color="primary">
                   Learn more about SteemConnect
                 </Button>
@@ -109,7 +67,7 @@ class HomeContent extends Component {
             <span className="text-content">
               Steemrobo becomes very powerful when it comes to redeem your curation rewards. It doesn't matter if you are offline or inactive on Steemit, Steemrobo will
                make sure that you receive your curation rewards and will make it even better.
-              <div className="text-center">
+              <div className="text-center mt-5">
                 <Button href={"https://google.com"} size="medium" color="primary">
                   How it works?
                 </Button>
@@ -117,16 +75,15 @@ class HomeContent extends Component {
             </span>
           </div>
           <div className="right-content">
-            <Paper elevation={5}>
-              <img src={robot} />
+            <Paper elevation={7}>
+              <img src={robot} alt="Curation Rewards"/>
             </Paper>
           </div>
         </div>
-
         <div className="left-image-right-content">
           <div className="left-content">
-            <Paper elevation={5}>
-              <img src={securityImage} />
+            <Paper elevation={7}>
+              <img src={openSource} alt="Open Source"/>
             </Paper>
           </div>
           <div className="right-content">
@@ -136,9 +93,12 @@ class HomeContent extends Component {
             <span className="text-content">
               Steemrobo is completely open source so you can always check what is happening inside the code. Most importantly our algorithm which we are using
               to automate the upvotes is also there if you want build your own STEEM app or improve the code.
-              <div className="text-center">
-                <Button href={"https://steemconnect.com/"} size="medium" color="primary">
-                  Learn more about SteemConnect
+              <div className="text-center mt-4">
+                <Button href={"https://steemconnect.com/"} size="medium" color="primary" className="mt-3">
+                  Front-End Code <h2><i className="fa fa-github ml-2 mt-2"></i></h2>
+                </Button>
+                <Button href={"https://steemconnect.com/"} size="medium" color="primary" className="mt-3">
+                  Back-End Code<i className="fa fa-github ml-2"></i>
                 </Button>
               </div>
             </span>

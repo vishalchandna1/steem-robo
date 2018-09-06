@@ -59,6 +59,9 @@ const mapDispatchToProps = (dispatch, props) => ({
         dispatch(accountActions.setAccountGlobalConfig(res));
       }
     })
+  },
+  handleLogout: () => {
+    
   }
 })
 

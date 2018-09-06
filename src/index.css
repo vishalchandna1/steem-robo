@@ -8,3 +8,11 @@ body {
   top: -30px;
   font-size: 24px;
 }
+
+.icon-danger {
+  color: red;
+}
+
+.icon-primary {
+  color: #007bff;
+}

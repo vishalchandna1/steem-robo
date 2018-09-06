@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = props => {
-  console.log(props)
   return {
     sliderContainer: {
       width: '90%',
@@ -55,9 +54,9 @@ class SteemPowerSlider extends Component {
           </Typography>
         </div>
         <div className="slider-container"> 
-          <Slider {...other} formatLabel={value => `${value}%`}/>
+          <Slider {...other} />
         </div>
-        <Button loading={false}>
+        <Button className="mt-5" loading={false}>
           Save
         </Button>
       </div>

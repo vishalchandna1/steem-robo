@@ -2,7 +2,7 @@ const SET_VOTING_WEIGHT = 'steem-robo/home/SET_VOTING_WEIGHT'
 const SET_SLIDER_LOADING = 'steem-robo/home/SET_SLIDER_LOADING'
 
 const initialState = {
-  voting_weight: 50,
+  voting_weight: 2,
   slider_loading: false,
 };
 

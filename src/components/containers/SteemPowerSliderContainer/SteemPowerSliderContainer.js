@@ -6,7 +6,7 @@ const mapStateToProps = (state, props) => {
   const { sp } = props;
   const { step, min } = slideHelpers.getSliderStepAndMin(sp);
   const { voting_weight } = state.dashboard;
-  const { frequency } = slideHelpers.getSliderData(sp * voting_weight / 100)
+  const { frequency } = slideHelpers.getSliderDataWithUpvotes(sp, voting_weight)
   return {
     step: step ? step : 25,
     minValue: min ? min : 25,
