@@ -6,6 +6,10 @@ import * as accountActions from '../../../redux/modules/account';
 import * as snackbarMessages from '../../../redux/constants/snackbarMessages';
 import { push } from 'react-router-redux';
 import steem from 'steem';
+  
+steem.api.getContent('funnyman', '10-unknown-football-facts-every-fan-should-know', (err, res) => {
+  console.log(err, res);
+})
 
 const mapStateToProps = (state) => {
   const { account_info, account_global_config } = state.account;

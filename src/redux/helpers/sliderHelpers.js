@@ -47,35 +47,38 @@ export const getSliderDataWithUpvotes = (sp, upvotes) => {
   let dataToBeReturned = {
     min: 2,
     frequency: 24,
-    multiplier: constants.STEEM_EQUAL_50,
+    multiplier: constants.STEEM_EQUAL_100,
   };
 
   const totalDelicatedSteem = upvotes * sp
 
-  if (totalDelicatedSteem <= 50) {
-    // Default will be returned.
-  } else if (totalDelicatedSteem > 50 && totalDelicatedSteem <= 100) {
-    min_threshold_power = 50;
-    min_threshold_frequency = 24;
-    dataToBeReturned.min = 35;
-    dataToBeReturned.multiplier = constants.STEEM_50_100;
-  } else if (totalDelicatedSteem > 100 && totalDelicatedSteem <= 500) {
-    min_threshold_power = 100;
-    min_threshold_frequency = 20;
-    dataToBeReturned.min = 25;
-    dataToBeReturned.multiplier = constants.STEEM_100_500;
-  } else if (totalDelicatedSteem > 500 && totalDelicatedSteem < 3000) {
-    min_threshold_power = 500;
-    min_threshold_frequency = 16;
-    dataToBeReturned.min = 25;
-    dataToBeReturned.multiplier = constants.STEEM_500_3000;
-  } else if (totalDelicatedSteem > 3000) {
-    min_threshold_power = 3000;
-    min_threshold_frequency = 12;
-    dataToBeReturned.min = 20;
-    dataToBeReturned.multiplier = constants.STEEM_GREATER_3000;
-  }
-  dataToBeReturned.frequency = min_threshold_frequency - (totalDelicatedSteem - min_threshold_power) * dataToBeReturned.multiplier;
+  // if (totalDelicatedSteem <= 100) {
+  //   // Default will be returned.
+  // } else if (totalDelicatedSteem > 100 && totalDelicatedSteem <= 1000) {
+  //   min_threshold_power = 100;
+  //   min_threshold_frequency = 24;
+  //   dataToBeReturned.min = 35;
+  //   dataToBeReturned.multiplier = constants.STEEM_100_1000;
+  // } else if (totalDelicatedSteem > 1000 && totalDelicatedSteem <= 10000) {
+  //   min_threshold_power = 1000;
+  //   min_threshold_frequency = 20;
+  //   dataToBeReturned.min = 25;
+  //   dataToBeReturned.multiplier = constants.STEEM_1000_10000;
+  // } else if (totalDelicatedSteem > 10000 && totalDelicatedSteem < 100000) {
+  //   min_threshold_power = 10000;
+  //   min_threshold_frequency = 16;
+  //   dataToBeReturned.min = 25;
+  //   dataToBeReturned.multiplier = constants.STEEM_10000_100000;
+  // } else if (totalDelicatedSteem > 100000) {
+  //   min_threshold_power = 100000;
+  //   min_threshold_frequency = 12;
+  //   dataToBeReturned.min = 20;
+  //   dataToBeReturned.multiplier = constants.STEEM_GREATER_100000;
+  // }
+
+  // dataToBeReturned.frequency = min_threshold_frequency - (totalDelicatedSteem - min_threshold_power) * dataToBeReturned.multiplier;
+  const numberOfDigits = parseInt(totalDelicatedSteem).toString().length;
+  dataToBeReturned.frequency = (7 - (numberOfDigits-1)) * 4 - (totalDelicatedSteem - Math.pow(10, numberOfDigits-1)) * 44 / Math.pow(10, (numberOfDigits + 1))
 
   if (dataToBeReturned.frequency < 6) {
     dataToBeReturned.frequency = 6;
