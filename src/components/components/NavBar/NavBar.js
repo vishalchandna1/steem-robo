@@ -65,6 +65,7 @@ const styles = props => {
       padding:'6px 20px',
       borderRadius: unit/2,
       color: palette.common.white,
+      margin: '0 !important',
       marginLeft: unit,
     },
     howItWorksLink: {
@@ -72,6 +73,7 @@ const styles = props => {
       padding:'6px 20px',
       borderRadius: unit/2,
       color: palette.common.white,
+      margin: '0 !important',
       marginLeft: unit,
     }
   }
@@ -105,13 +107,13 @@ class NavBar extends Component {
         <Toolbar className="navbar-container">
           <Typography variant="body2" color="inherit" className={classes.title} >
             <Typography variant="title">{name ? 'HI' : ''}</Typography>
+            <Link to="/" boxShadow="none" backgroundColor="transparent" color="black" fontSize="x-large" className={classes.leftMargin}>Steemrobo</Link>
             <Typography variant="body1" className={classes.leftMargin}>{name ? name + ',' : ''}</Typography>
-            <Typography variant="title" className={classes.leftMargin}> Welcome to Steemrobo</Typography>
             <div className={classes.linksContainer}>
-              <Link to={"/faqs"} backgroundColor="#f50057" className={classes.faqLink}>
+              <Link to={"/faqs"} backgroundColor="#f50057" marginTop="0" className={classes.faqLink}>
                 FAQs
               </Link>
-              <Link to={"/how-it-works"} className={classes.howItWorksLink}>
+              <Link to={"/how-it-works"} marginTop="0" className={classes.howItWorksLink}>
                 How it works?
               </Link>
               {!isLoggedIn && <div>

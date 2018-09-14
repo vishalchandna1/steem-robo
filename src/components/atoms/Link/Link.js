@@ -19,6 +19,8 @@ const styles = theme => {
       border: theme.border || 'none',
       boxShadow: theme.boxShadow || theme.theme.shadows[3],
       textDecoration: 'none !important',
+      fontFamily: 'robotto',
+      fontSize: theme.fontSize || 'medium',
       '&:hover': {
         color: theme.color || palette.common.white,
       }
@@ -29,7 +31,7 @@ const styles = theme => {
 const CustomLink = (props) => {
   if (props.external)
     return <a href={props.to} target="_blank" className={props.classes.link}>{props.children}</a>
-  return <Link to={props.to} className={props.classes.link}>{props.children}</Link>
+  return <Link to={props.to} className={`${props.classes.link}`}>{props.children}</Link>
 }
 
 export default withStyles(styles)(CustomLink);

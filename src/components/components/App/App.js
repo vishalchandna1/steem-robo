@@ -10,6 +10,7 @@ class App extends Component {
     props.initSteemConnect();
     props.setAccessToken();
     props.setAccountGlobalConfig();
+    console.log("jere go")
   }
   render() {
     const {routes, name, loginUrl, isLoggedIn, handleLogout} = this.props
