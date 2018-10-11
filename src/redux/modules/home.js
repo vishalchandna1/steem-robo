@@ -29,11 +29,11 @@ export function initSteemConnect(payload) {
   }
 }
 
+// Will be replaced with return {types: [REQUEST, SUCCESS, FAILURE], promise: (axios) => axios.post(url, {data: payload})}
 export function setAccessToken(payload) {
   return {
     type: SET_ACCESS_TOKEN,
     payload: payload,
   }
 }
-
 

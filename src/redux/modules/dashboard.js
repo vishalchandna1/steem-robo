@@ -36,4 +36,3 @@ export function setSliderLoading(payload) {
     payload: payload,
   }
 }
-
