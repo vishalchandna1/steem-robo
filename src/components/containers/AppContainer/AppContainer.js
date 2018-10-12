@@ -53,7 +53,7 @@ const mapDispatchToProps = (dispatch, props) => ({
           message: snackbarMessages.FETCH_GLOBAL_VARIABLES_ERROR,
           type: 'warning',
           id: Math.random(),
-          duration: 10000,
+          duration: 9999,
         }))
       } else {
         dispatch(accountActions.setAccountGlobalConfig(res));
