@@ -107,7 +107,7 @@ class HomeContent extends Component {
 
         <div className="start-your-journey">
           <span className="text">
-            Start your jouney with Steemrobo 
+            Start your jouney with Steemrobo
           </span>
           <div className="link-container">
             Continue to <SteemConnectLogin url={loginUrl}/>
